@@ -73,7 +73,7 @@ public class Query1Processing {
         System.out.println(resultPairs.take(n));
 
         JavaRDD<String> result = resultPairs.map(x ->
-                "city: " + x._1.split("/")[1] + "\tyear: " + x._1.split("/")[0]);
+                "{city: " + x._1.split("/")[1] + ", year: " + x._1.split("/")[0] + "}");
 
         System.out.println(result.take(n));
 

@@ -20,6 +20,6 @@ public class MainQuery1 {
         JavaRDD<String> result = Query1Processing.preprocessDataset(sc);
         result.saveAsTextFile(output);
 
-        sc.close();
+        sc.stop();
     }
 }
