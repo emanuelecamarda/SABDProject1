@@ -77,4 +77,9 @@ public class WeatherRecord implements Serializable {
         result.add(new WeatherRecord(cityWeather.getDatetime(), "Jerusalem", cityWeather.getJerusalem()));
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "{datetime: " + this.datetime + ", city: " + this.city + ", weather: " + this.weather + "}";
+    }
 }

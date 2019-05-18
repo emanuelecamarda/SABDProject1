@@ -370,4 +370,10 @@ public class CityWeather implements Serializable {
     public String getHour() {
         return this.datetime.split(" ")[1].split(":")[0];
     }
+
+    @Override
+    public String toString() {
+        return "{datetime: " + this.datetime + ", Portland: " + this.Portland +
+                ", San Francisco: " + this.getSanFrancisco() + ", ... }";
+    }
 }

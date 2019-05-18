@@ -44,7 +44,7 @@ public class Query1Processing {
 
         // A clear weather day must have at least 20 hours of clear sky
         JavaPairRDD<String, Integer> clearWeatherForDayPairs = clearWeatherTotalHourForDayPairs.mapToPair(x ->
-                new Tuple2<>(x._1.split("-")[0] + x._1.split("-")[1] + "/" + x._1.split("/")[1],
+                new Tuple2<>(x._1.split("-")[0] + "-" +  x._1.split("-")[1] + "/" + x._1.split("/")[1],
                         (x._2 >= 20) ? 1 : 0));
 
         System.out.println(clearWeatherForDayPairs.take(n));
