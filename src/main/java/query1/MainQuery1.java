@@ -3,9 +3,10 @@ package query1;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import scala.Tuple3;
 
 public class MainQuery1 {
+
+    private static String output = "hdfs://locahost:9000/user/hadoop/data/outputQuery1";
 
     public static void main (String[] args) {
 
@@ -15,10 +16,9 @@ public class MainQuery1 {
         JavaSparkContext sc = new JavaSparkContext(conf);
         sc.setLogLevel("ERROR");
 
-        JavaRDD<Tuple3<String, String, Double>> value = Query1Preprocessing.preprocessDataset(sc);
-
-        System.out.println("Query 1 Spark SQL");
-        Query1SparkSQL.process(value);
+        System.out.println("Executing Query 1 ...");
+        JavaRDD<String> result = Query1Processing.preprocessDataset(sc);
+        result.saveAsTextFile(output);
 
         sc.close();
     }

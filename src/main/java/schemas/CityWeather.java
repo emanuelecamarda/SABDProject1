@@ -1,6 +1,8 @@
 package schemas;
 
-public class CityWeather {
+import java.io.Serializable;
+
+public class CityWeather implements Serializable {
 
     // 34 attributes
     private String datetime;

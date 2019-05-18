@@ -6,13 +6,15 @@ public class CityWeatherParser {
 
     public static CityWeather parseCSV(String csvLine) {
 
-        CityWeather cityWeather = null;
+        CityWeather cityWeather;
         String[] csvValues = csvLine.split(",");
+
+        // skipping header
+        if (csvValues[0].equals("datetime"))
+            return null;
 
         if (csvValues.length != 34)
             return null;
-
-//            1464894,1377987280,3.216,0,1,0,3
 
         cityWeather = new CityWeather(
                 csvValues[0], // datatime
@@ -51,6 +53,6 @@ public class CityWeatherParser {
                 csvValues[33] // Jerusalem
         );
 
-        return outlet;
-    }11
+        return cityWeather;
+    }
 }
