@@ -28,15 +28,19 @@ public abstract class CityRecord implements Serializable {
         this.city = city;
     }
 
-    public String getState() {
-        if (this.city.equals("Beersheba") ||
-                this.city.equals("Tel Aviv District") ||
-                this.city.equals("Eilat") ||
-                this.city.equals("Haifa") ||
-                this.city.equals("Nahariyya") ||
-                this.city.equals("Jerusalem"))
-            return "Israel";
-        else
-            return "USA";
+    public String getYear() {
+        return this.datetime.split("-")[0];
+    }
+
+    public String getMounth() {
+        return this.datetime.split("-")[1];
+    }
+
+    public String getDay() {
+        return this.datetime.split("-")[2];
+    }
+
+    public String getHour() {
+        return this.datetime.split(" ")[1].split(":")[0];
     }
 }

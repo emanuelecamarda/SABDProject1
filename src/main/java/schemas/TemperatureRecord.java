@@ -21,7 +21,7 @@ public class TemperatureRecord extends CityRecord implements Serializable {
         this.temperature = temperature;
     }
 
-    public static List<TemperatureRecord> rowRecordToListWeatherRecords(RowRecord rowRecord) {
+    public static List<TemperatureRecord> rowRecordToListTemperatureRecords(RowRecord rowRecord) {
         ArrayList<TemperatureRecord> result = new ArrayList<>();
         result.add(new TemperatureRecord(rowRecord.getDatetime(), "Portland",
                 Double.parseDouble(rowRecord.getPortland())));

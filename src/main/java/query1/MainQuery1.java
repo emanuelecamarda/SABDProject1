@@ -17,7 +17,7 @@ public class MainQuery1 {
         sc.setLogLevel("ERROR");
 
         System.out.println("Executing Query 1 ...");
-        JavaRDD<String> result = Query1Processing.preprocessDataset(sc);
+        JavaRDD<String> result = Query1Processing.executeQuery1(sc);
         result.saveAsTextFile(output);
 
         sc.stop();
