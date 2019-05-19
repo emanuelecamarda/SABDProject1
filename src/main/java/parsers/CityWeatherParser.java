@@ -1,12 +1,12 @@
 package parsers;
 
-import schemas.CityWeather;
+import schemas.RowRecord;
 
 public class CityWeatherParser {
 
-    public static CityWeather parseCSV(String csvLine) {
+    public static RowRecord parseCSV(String csvLine) {
 
-        CityWeather cityWeather;
+        RowRecord rowRecord;
         String[] csvValues = csvLine.split(",");
 
         // skipping header
@@ -16,7 +16,7 @@ public class CityWeatherParser {
         if (csvValues.length != 34)
             return null;
 
-        cityWeather = new CityWeather(
+        rowRecord = new RowRecord(
                 csvValues[0], // datatime
                 csvValues[1], // Portland
                 csvValues[2], // San Francisco
@@ -53,6 +53,6 @@ public class CityWeatherParser {
                 csvValues[33] // Jerusalem
         );
 
-        return cityWeather;
+        return rowRecord;
     }
 }

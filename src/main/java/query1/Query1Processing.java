@@ -5,7 +5,7 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import parsers.CityWeatherParser;
 import scala.Tuple2;
-import schemas.CityWeather;
+import schemas.RowRecord;
 import schemas.WeatherRecord;
 
 public class Query1Processing {
@@ -16,7 +16,7 @@ public class Query1Processing {
     public static JavaRDD<String> preprocessDataset(JavaSparkContext sc) {
 
         // filter to take only row relative March, April and May
-        JavaRDD<CityWeather> citiesWeatherForHour = sc.textFile(pathToFile)
+        JavaRDD<RowRecord> citiesWeatherForHour = sc.textFile(pathToFile)
                 .map(line -> CityWeatherParser.parseCSV(line))
                 .filter(x -> x != null && (x.getMounth().equals("03") || x.getMounth().equals("04") ||
                         x.getMounth().equals("05")));
@@ -25,7 +25,7 @@ public class Query1Processing {
 
         // Split RDD for cities
         JavaRDD<WeatherRecord> weatherRecordsForHour = citiesWeatherForHour.flatMap(citiesWeather ->
-                WeatherRecord.cityWeatherToListWeatherRecords(citiesWeather).iterator());
+                WeatherRecord.rowRecordToListWeatherRecords(citiesWeather).iterator());
 
         System.out.println(weatherRecordsForHour.take(n));
 

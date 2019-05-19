@@ -40,41 +40,41 @@ public class WeatherRecord implements Serializable {
         this.weather = weather;
     }
 
-    public static List<WeatherRecord> cityWeatherToListWeatherRecords(CityWeather cityWeather) {
+    public static List<WeatherRecord> rowRecordToListWeatherRecords(RowRecord rowRecord) {
         ArrayList<WeatherRecord> result = new ArrayList<>();
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Portland", cityWeather.getPortland()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "San Francisco", cityWeather.getSanFrancisco()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Seattle", cityWeather.getSeattle()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Los Angeles", cityWeather.getLosAngeles()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "San Diego", cityWeather.getSanDiego()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Las Vegas", cityWeather.getLasVegas()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Phoenix", cityWeather.getPhoenix()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Albuquerque", cityWeather.getAlbuquerque()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Denver", cityWeather.getDenver()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "San Antonio", cityWeather.getSanAntonio()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Dallas", cityWeather.getDallas()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Houston", cityWeather.getHouston()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Kansas City", cityWeather.getKansasCity()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Minneapolis", cityWeather.getMinneapolis()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Saint Louis", cityWeather.getSaintLouis()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Chicago", cityWeather.getChicago()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Nashville", cityWeather.getNashville()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Indianapolis", cityWeather.getIndianapolis()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Atlanta", cityWeather.getAtlanta()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Detroit", cityWeather.getDetroit()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Jacksonville", cityWeather.getJacksonville()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Charlotte", cityWeather.getCharlotte()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Miami", cityWeather.getMiami()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Pittsburgh", cityWeather.getPittsburgh()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Philadelphia", cityWeather.getPhiladelphia()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "New York", cityWeather.getNewYork()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Boston", cityWeather.getBoston()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Beersheba", cityWeather.getBeersheba()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Tel Aviv District", cityWeather.getTelAvivDistrict()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Eilat", cityWeather.getEilat()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Haifa", cityWeather.getHaifa()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Nahariyya", cityWeather.getNahariyya()));
-        result.add(new WeatherRecord(cityWeather.getDatetime(), "Jerusalem", cityWeather.getJerusalem()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Portland", rowRecord.getPortland()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "San Francisco", rowRecord.getSanFrancisco()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Seattle", rowRecord.getSeattle()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Los Angeles", rowRecord.getLosAngeles()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "San Diego", rowRecord.getSanDiego()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Las Vegas", rowRecord.getLasVegas()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Phoenix", rowRecord.getPhoenix()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Albuquerque", rowRecord.getAlbuquerque()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Denver", rowRecord.getDenver()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "San Antonio", rowRecord.getSanAntonio()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Dallas", rowRecord.getDallas()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Houston", rowRecord.getHouston()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Kansas City", rowRecord.getKansasCity()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Minneapolis", rowRecord.getMinneapolis()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Saint Louis", rowRecord.getSaintLouis()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Chicago", rowRecord.getChicago()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Nashville", rowRecord.getNashville()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Indianapolis", rowRecord.getIndianapolis()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Atlanta", rowRecord.getAtlanta()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Detroit", rowRecord.getDetroit()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Jacksonville", rowRecord.getJacksonville()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Charlotte", rowRecord.getCharlotte()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Miami", rowRecord.getMiami()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Pittsburgh", rowRecord.getPittsburgh()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Philadelphia", rowRecord.getPhiladelphia()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "New York", rowRecord.getNewYork()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Boston", rowRecord.getBoston()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Beersheba", rowRecord.getBeersheba()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Tel Aviv District", rowRecord.getTelAvivDistrict()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Eilat", rowRecord.getEilat()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Haifa", rowRecord.getHaifa()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Nahariyya", rowRecord.getNahariyya()));
+        result.add(new WeatherRecord(rowRecord.getDatetime(), "Jerusalem", rowRecord.getJerusalem()));
         return result;
     }
 

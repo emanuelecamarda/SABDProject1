@@ -2,7 +2,7 @@ package schemas;
 
 import java.io.Serializable;
 
-public class CityWeather implements Serializable {
+public class RowRecord implements Serializable {
 
     // 34 attributes
     private String datetime;
@@ -40,13 +40,13 @@ public class CityWeather implements Serializable {
     private String Nahariyya;
     private String Jerusalem;
 
-    public CityWeather(String datetime, String portland, String sanFrancisco, String seattle, String losAngeles,
-                       String sanDiego, String lasVegas, String phoenix, String albuquerque, String denver,
-                       String sanAntonio, String dallas, String houston, String kansasCity, String minneapolis,
-                       String saintLouis, String chicago, String nashville, String indianapolis, String atlanta,
-                       String detroit, String jacksonville, String charlotte, String miami, String pittsburgh,
-                       String philadelphia, String newYork, String boston, String beersheba, String telAvivDistrict,
-                       String eilat, String haifa, String nahariyya, String jerusalem) {
+    public RowRecord(String datetime, String portland, String sanFrancisco, String seattle, String losAngeles,
+                     String sanDiego, String lasVegas, String phoenix, String albuquerque, String denver,
+                     String sanAntonio, String dallas, String houston, String kansasCity, String minneapolis,
+                     String saintLouis, String chicago, String nashville, String indianapolis, String atlanta,
+                     String detroit, String jacksonville, String charlotte, String miami, String pittsburgh,
+                     String philadelphia, String newYork, String boston, String beersheba, String telAvivDistrict,
+                     String eilat, String haifa, String nahariyya, String jerusalem) {
         this.datetime = datetime;
         Portland = portland;
         SanFrancisco = sanFrancisco;

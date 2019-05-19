@@ -6,7 +6,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 public class MainQuery1 {
 
-    private static String output = "hdfs://locahost:9000/user/hadoop/data/outputQuery1";
+    private static String output = "hdfs:///outputQuery1";
 
     public static void main (String[] args) {
 
