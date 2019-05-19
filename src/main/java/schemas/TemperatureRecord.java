@@ -4,32 +4,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TemperatureRecord implements Serializable {
+public class TemperatureRecord extends CityRecord implements Serializable {
 
-    private String datetime;
-    private String city;
     private Double temperature;
 
     public TemperatureRecord(String datetime, String city, Double temperature) {
-        this.datetime = datetime;
-        this.city = city;
+        super(datetime, city);
         this.temperature = temperature;
-    }
-
-    public String getDatetime() {
-        return datetime;
-    }
-
-    public void setDatetime(String datetime) {
-        this.datetime = datetime;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 
     public Double getTemperature() {
