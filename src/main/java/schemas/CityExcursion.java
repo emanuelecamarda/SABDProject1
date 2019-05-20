@@ -1,6 +1,8 @@
 package schemas;
 
-public class CityExcursion {
+import java.io.Serializable;
+
+public class CityExcursion implements Serializable {
 
     private String city;
     private Double excursions;

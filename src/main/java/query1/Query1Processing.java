@@ -12,7 +12,7 @@ public class Query1Processing {
 
     private static Integer n = 10;
     private static String pathToFile = "data/weather_description.csv";
-    private static  Boolean printSwitch = true;
+    private static  Boolean printSwitch = false;
 
     public static JavaRDD<String> executeQuery1(JavaSparkContext sc) {
 
@@ -47,10 +47,10 @@ public class Query1Processing {
         if (printSwitch)
             System.out.println(clearWeatherTotalHourForDayPairs.take(n));
 
-        // A clear weather day must have at least 20 hours of clear sky
+        // A clear weather day must have at least 18 hours of clear sky
         JavaPairRDD<String, Integer> clearWeatherForDayPairs = clearWeatherTotalHourForDayPairs.mapToPair(x ->
                 new Tuple2<>(x._1.split("-")[0] + "-" +  x._1.split("-")[1] + "/" + x._1.split("/")[1],
-                        (x._2 >= 20) ? 1 : 0));
+                        (x._2 >= 18) ? 1 : 0));
 
         if (printSwitch)
             System.out.println(clearWeatherForDayPairs.take(n));
