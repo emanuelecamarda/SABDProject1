@@ -6,10 +6,15 @@ public class CityExcursion implements Serializable {
 
     private String city;
     private Double excursions;
+    private String query;
+    private String year;
+    private String state;
 
-    public CityExcursion(String city, Double excursions) {
+    public CityExcursion(String city, Double excursions, String year) {
         this.city = city;
         this.excursions = excursions;
+        this.query = "query3";
+        this.year = year;
     }
 
     public String getCity() {
@@ -30,7 +35,8 @@ public class CityExcursion implements Serializable {
 
     @Override
     public String toString() {
-        return "{city: " + city + ", excursions: " + excursions + '}';
+        return "{\"year\": \"" + this.year + "\", \"state\": \"" + this.state + "\", \"city\": " +
+                this.city + "\", \"excursions\": \"" + this.excursions + "\", \"query\": \"" + this.query + "\"}";
     }
 
     public String getState() {
@@ -39,9 +45,12 @@ public class CityExcursion implements Serializable {
                 this.city.equals("Eilat") ||
                 this.city.equals("Haifa") ||
                 this.city.equals("Nahariyya") ||
-                this.city.equals("Jerusalem"))
+                this.city.equals("Jerusalem")) {
+            this.state = "Israel";
             return "Israel";
-        else
+        } else {
+            this.state = "USA";
             return "USA";
+        }
     }
 }

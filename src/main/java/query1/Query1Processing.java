@@ -5,6 +5,7 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import parsers.CityWeatherParser;
 import scala.Tuple2;
+import schemas.Query1Result;
 import schemas.RowRecord;
 import schemas.WeatherRecord;
 
@@ -14,7 +15,7 @@ public class Query1Processing {
     private static String pathToFile = "data/weather_description.csv";
     private static  Boolean printSwitch = false;
 
-    public static JavaRDD<String> executeQuery1(JavaSparkContext sc) {
+    public static JavaRDD<Query1Result> executeQuery1(JavaSparkContext sc) {
 
         // filter to take only row relative March, April and May
         JavaRDD<RowRecord> citiesWeatherForHour = sc.textFile(pathToFile)
@@ -82,8 +83,8 @@ public class Query1Processing {
         if (printSwitch)
             System.out.println(resultPairs.take(n));
 
-        JavaRDD<String> result = resultPairs.map(x ->
-                "{city: " + x._1.split("/")[1] + ", year: " + x._1.split("/")[0] + "}");
+        JavaRDD<Query1Result> result = resultPairs.map(x -> new Query1Result(x._1.split("/")[1],
+                x._1.split("/")[0]));
 
         if (printSwitch)
             System.out.println(result.take(n));

@@ -103,7 +103,7 @@ public class Query3Processing {
         // Calculate temperature excursions (pairs (city, excursions))
         JavaRDD<CityExcursion> excursions2017 = temperatureCold2017mean.union(temperatureHot2017mean)
                 .reduceByKey((x, y) -> new MeanSchema(Math.abs(x.getMean() - y.getMean()), 0.0))
-                .map(x -> new CityExcursion(x._1, x._2.getMean()));
+                .map(x -> new CityExcursion(x._1, x._2.getMean(), "2017"));
 
         if (printSwitch)
             System.out.println(excursions2017.collect());
@@ -178,7 +178,7 @@ public class Query3Processing {
         // Calculate temperature excursions (pairs (city, excursions))
         JavaRDD<CityExcursion> excursions2016 = temperatureCold2016mean.union(temperatureHot2016mean)
                 .reduceByKey((x, y) -> new MeanSchema(Math.abs(x.getMean() - y.getMean()), 0.0))
-                .map(x -> new CityExcursion(x._1, x._2.getMean()));
+                .map(x -> new CityExcursion(x._1, x._2.getMean(), "2016"));
 
         if (printSwitch)
             System.out.println(excursions2016.collect());
